@@ -1294,6 +1294,175 @@ a{
     justify-content: center;
     padding-bottom: 6px;
 }
+/* -----------------------Login--------------- */
+
+.login-form{
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 50px 100px;
+    border-top: 1px slategrey solid;
+    padding-top: 30px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    text-align: center;
+}
+.login-form h3{
+    font-weight: 600;
+    font-size: 20px;
+    margin: 0;
+    margin-bottom: 15px;
+}
+.login-form p{
+    font-size: 14px;
+    color: #6C6D70;
+    line-height: 2;
+}
+.login-form .form-group input{
+    padding: 15px;
+    width: 380px;
+    height: 48px;
+    border: 0.3px #6C6D70 solid;
+    border-radius: 5px;
+    margin: 10px 0;
+    font-size: 14px;
+}
+.login-form .form-group input:focus {
+    box-shadow: 0 0 5px 1px #5b78cf; /* Đổi màu viền khi input được nhấp vào */
+    outline: none; /* Loại bỏ viền khi input được focus */
+}
+.login-form .left-login{
+    border-right: 0.3px #6C6D70 solid;
+    padding: 0 60px;
+    width: 100%;
+}
+.login-form .right-login{
+    padding: 0 60px;
+    width: 100%;
+}
+.login-form .form-checkbox{
+    margin-top: 10px;
+    display: flex;
+    flex-direction: row;
+    margin-left: 76px;
+}
+.login-form a{
+    color: black;
+    margin-left: 90px;
+}
+.login-form .form-btn{
+    margin-top: 20px;
+}
+.login-form .form-btn input{
+    width: 390px;
+    font-size: 16px;
+    font-weight: 800;
+    padding: 14px 24px;
+    border-top-left-radius:20px ;
+    border-bottom-right-radius: 20px;
+    color: white;
+    background-color: black;
+}
+.login-form .form-btn input:hover{
+    color: black;
+    background-color: white;
+    cursor: pointer;
+}
+
+.register-form{
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 50px 0px;
+    border-top: 1px slategrey solid;
+    padding-top: 20px;
+    padding-left: 5%;
+    padding-right: 5%;
+    display: flex;
+    flex-direction: column;
+}
+.register-form h3{
+    font-size: 24px;
+    margin: 0 auto;
+    margin-bottom: 25px;
+}
+
+.register-form .infor-user{
+    padding: 20px;
+}
+.register-form .infor-password{
+    padding: 20px;
+}
+.register-form .register-row p{
+    color: #6C6D70;
+    line-height: 2;
+    line-break: 2;
+}
+.register-form .register-row{
+    margin-top: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.register-form .register-row .element-form{
+    width:45%;
+}
+.register-form .register-row .element-form-2{
+    width:100%;
+}
+.register-form input {
+    border: 0.5px slategrey solid;
+    border-radius: 5px;
+    padding: 15px;
+    width: 100%;
+}
+.register-form .register-row-2{
+    margin-top: 10px;
+    display: flex;
+    flex-direction: row;
+    font-size: 16px;
+}
+.register-form .register-row-2 input{
+    width: 16px;
+    height: 16px;
+}
+.register-form input:focus{
+    box-shadow: 0 0 5px 1px #27ccd8; /* Đổi màu viền khi input được nhấp vào */
+    outline: none; /* Loại bỏ viền khi input được focus */
+}
+.register-form .register-row-2 span{
+    margin-left: 10px;
+    color: #6C6D70;
+    font-size: 16px;
+}
+.register-form .register-row textarea{
+    width: 100%;
+}
+.register-form .register-form-content{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    font-size: 16px;
+}
+.register-form .register-form-content .infor-user{
+    width: 100%;
+}
+.register-form .register-form-content .infor-password{
+    width: 100%;
+}
+.register-form .form-btn input{
+    margin-top: 20px;
+    width: 100%;
+    font-size: 16px;
+    font-weight: 800;
+    padding: 14px 24px;
+    border-top-left-radius:20px ;
+    border-bottom-right-radius: 20px;
+    color: white;
+    background-color: black;
+}
+.register-form .form-btn input:hover{
+    color: black;
+    background-color: white;
+    cursor: pointer;
+}
 /* -----------------------Responsive--------------- */
 .menu-bar {
     display: none;

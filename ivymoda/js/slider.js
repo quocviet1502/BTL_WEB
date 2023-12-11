@@ -5,17 +5,17 @@
     let index = 0;
     let imgLeng = imgItem.length
     imgItem.forEach(function(image,index){
-        image.style.left = index*100 + "%"
+        image.style.left = index*100 + "%";
         dotItem[index].addEventListener("click",function(){
-        slideRun (index)
+        slideRun (index);
         })
     })
     function slider (){
         index++;
         if(index >= imgLeng){index=0;
        
-        }S
-        slideRun (index)
+        }
+        slideRun (index);
     }
     function slideRun (index) {
         imgItemContainer.style.left = "-" + index*100 + "%"

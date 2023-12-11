@@ -26,6 +26,8 @@ SET time_zone = "+00:00";
 --
 -- Table structure for table `tbl_admin`
 --
+CREATE DATABASE IF NOT EXISTS `website_ivy` DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci;
+USE `website_ivy`;
 
 CREATE TABLE `tbl_admin` (
   `admin_id` int(11) NOT NULL,
