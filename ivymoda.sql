@@ -20,6 +20,8 @@ SET time_zone = "+00:00";
 --
 -- Database: `website_ivy`
 --
+CREATE DATABASE IF NOT EXISTS `website_ivy` DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci;
+USE `website_ivy`;
 
 -- --------------------------------------------------------
 
