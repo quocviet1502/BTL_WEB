@@ -67,16 +67,18 @@ include "header.php";
                     </div>
                     <div class="element-form">
                         <p>Quận/Huyện:</p>
-                        <select name="customer_huyen" id="quan_huyen" oninvalid="this.setCustomValidity('Vui lòng không để trống')" oninput="this.setCustomValidity('')" name="" id="">
+                        <select name="customer_huyen" id="quan_huyen" oninvalid="this.setCustomValidity('Vui lòng không để trống')" oninput="this.setCustomValidity('')" required name="" id="">
                             <option value="#">Chọn Quận/Huyện</option>
+                            <option value="#">Nam Dan</option>
                         </select>
                     </div>
                 </div>
                 <div class="register-row">
                     <div class="element-form">
                         <p>Phường/Xã:</p>
-                        <select name="customer_xa" id="phuong_xa" oninvalid="this.setCustomValidity('Vui lòng không để trống')" oninput="this.setCustomValidity('')" name="" id="">
+                        <select name="customer_xa" id="phuong_xa" oninvalid="this.setCustomValidity('Vui lòng không để trống')" oninput="this.setCustomValidity('')" required name="" id="">
                             <option value="#">Chọn Phường/Xã</option>
+                            <option value="#">Hi</option>
                         </select>
                     </div>
                 </div>
@@ -118,8 +120,8 @@ include "header.php";
                 </div> -->
             </div>
             <?php
-      include("progress_registation.php");
-      ?>
+            include("progress_registation.php");
+            ?>
         </form>
     </div>
 
