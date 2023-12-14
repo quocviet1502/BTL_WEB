@@ -1,36 +1,12 @@
 <?php
 include "header.php";
-?>
-<!---LOGIN--->
-<?php
-if (isset($_POST["login"])) {
-    $email = $_POST["email"];
-    $password = $_POST["password"];
-
-    if (empty($password)) {
-        echo "<div class='alert alert-danger'>Password is required</div>";
-    } else {
-        require_once "database/dtb.php";
-        $sql = "SELECT * FROM tbl_users WHERE email = '$email'";
-        $result = mysqli_query($conn, $sql);
-        $user = mysqli_fetch_array($result, MYSQLI_ASSOC);
-
-        if ($user) {
-            if (password_verify($password, $user["password"])) {
-                session_start();
-                $_SESSION["user"] = "yes";
-                header("Location: index.php");
-                die();
-            } else {
-                echo "<div class='alert alert-danger'>Password does not match</div>";
-            }
-        } else {
-            echo "<div class='alert alert-danger'>Email does not match</div>";
-        }
-    }
+if (isset($_SESSION["user"])) {
+    header("Location: index.php");
+    exit();
 }
 
 ?>
+<!---LOGIN--->
 <section class="login-form">
     <div class="left-login">
         <h3>Bạn đã có tài khoản IVY</h3>
@@ -44,12 +20,41 @@ if (isset($_POST["login"])) {
             </div>
             <div class="form-checkbox">
                 <input type="checkbox" name="checkbox" id="checkbox"><span>Ghi nhớ tên đăng nhập</span>
-                <a href="#">Quên mật khẩu</a>
+                <a href="password_reset.php">Quên mật khẩu</a>
             </div>
             <div class="form-btn">
                 <input type="submit" value="ĐĂNG NHẬP" name="login" class="btn btn-primary">
             </div>
         </form>
+        <?php
+        if (isset($_POST["login"])) {
+            $email = $_POST["email"];
+            $password = $_POST["password"];
+
+            if (empty($password)) {
+                echo "<div class='alert alert-danger'>Password is required</div>";
+            } else {
+                require_once "database/dtb.php";
+                $sql = "SELECT * FROM tbl_users WHERE email = '$email'";
+                $result = mysqli_query($conn, $sql);
+                $user = mysqli_fetch_array($result, MYSQLI_ASSOC);
+
+                if ($user) {
+                    if (password_verify($password, $user["password"])) {
+                        session_start();
+                        $_SESSION["user"] = $user;
+                        header("Location: index.php");
+                        die();
+                    } else {
+                        echo "<div class='alert alert-danger'>Mật khẩu không đúng</div>";
+                    }
+                } else {
+                    echo "<div class='alert alert-danger'>Email không hợp lệ</div>";
+                }
+            }
+        }
+
+        ?>
     </div>
     <div class="right-login">
         <h3>Khách hàng mới của IVY moda</h3>

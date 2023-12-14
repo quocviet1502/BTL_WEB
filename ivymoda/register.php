@@ -8,8 +8,8 @@ include "header.php";
 
 <div class="register-form">
     <h3>ĐĂNG KÝ</h3>
-    <div class="register-form-content">
-        <form action="" method="post">
+    <form action="" method="post">
+        <div class="register-form-content">
             <div class="infor-user">
                 <p> Thông tin khách hàng </p>
                 <div class="register-row">
@@ -69,7 +69,6 @@ include "header.php";
                         <p>Quận/Huyện:</p>
                         <select name="customer_huyen" id="quan_huyen" oninvalid="this.setCustomValidity('Vui lòng không để trống')" oninput="this.setCustomValidity('')" required name="" id="">
                             <option value="#">Chọn Quận/Huyện</option>
-                            <option value="#">Nam Dan</option>
                         </select>
                     </div>
                 </div>
@@ -78,7 +77,6 @@ include "header.php";
                         <p>Phường/Xã:</p>
                         <select name="customer_xa" id="phuong_xa" oninvalid="this.setCustomValidity('Vui lòng không để trống')" oninput="this.setCustomValidity('')" required name="" id="">
                             <option value="#">Chọn Phường/Xã</option>
-                            <option value="#">Hi</option>
                         </select>
                     </div>
                 </div>
@@ -104,13 +102,13 @@ include "header.php";
                     </div>
                 </div>
                 <div class="register-row-2">
-                    <input type="checkbox"><span>Đồng ý với điều khoản của IVY</span>
+                    <input type="checkbox" id = "dieukhoan" name = "dieukhoan"><span>Đồng ý với điều khoản của IVY</span>
                 </div>
                 <div class="register-row-2">
                     <input type="checkbox" id="angree" name="angree"><span>Đăng ký nhận bản tin</span>
                 </div>
                 <div class="form-btn">
-                    <button type="submit" class="btn btn-primary">Submit</button>
+                    <input type="submit" class="btn btn-primary" value = "ĐĂNG KÝ"/>
                 </div>
                 <!-- <div class="register-row">
                     <div class="element-form">
@@ -118,12 +116,12 @@ include "header.php";
                         <input type="text" name="char" id="char">
                     </div>
                 </div> -->
-            </div>
-            <?php
+                <?php
             include("progress_registation.php");
             ?>
-        </form>
-    </div>
+            </div>
+        </div>
+    </form>
 
 </div>
 

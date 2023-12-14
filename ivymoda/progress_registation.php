@@ -13,6 +13,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $phone = $_POST["Dienthoai"];
     $diachi = $_POST["diachi"];
     $angree = isset($_POST['angree']) ? 1 : 0;
+    $dieukhoan = isset($_POST['dieukhoan']) ? 1 : 0;
     $errors = [];
 
     if (empty($first_name) || !preg_match("/^.{2,30}$/", $first_name)) {
@@ -30,7 +31,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (empty($password) || !preg_match("/^.{2,30}$/", $password)) {
         $errors[] = "Mật khẩu không đúng yêu cầu";
     }
-
+    if($dieukhoan == 0)
+    {
+        $errors[] = "Vui lòng đọc điều khoản.";
+    }
     if(empty($gioitinh)){
         $errors[] = "Vui Lòng chọn giới tính.";
     }
@@ -72,7 +76,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             die("Something went wrong");
         }
     } else {
-        echo "<div class='error-message'>" . implode("<br>", $errors) . "</div>";
+        echo "<div class='alert alert-danger'>" . implode("<br>", $errors) . "</div>";
     }
     exit();
 }

@@ -5,6 +5,8 @@ require_once(__ROOT__ . '/admin/lib/session.php');
 require_once(__ROOT__ . '/admin/helper/format.php');
 //  include_once '../helper/format.php';
 //  include_once '../lib/database.php';
+// include_once './helper/format.php';
+// include_once './lib/database.php';
 ?>
 
 <?php
@@ -19,29 +21,7 @@ class index
         $this->db = new Database();
         $this->fm = new Format();
     }
-    public function insert_users_shop_register($first_name, $last_name, $email, $password, $date, $gioitinh, $tinh, $huyen, $xa, $phone, $diachi, $angree)
-    {
 
-        $checkExistingQuery = "SELECT * FROM tbl_users WHERE email='$email' OR phone='$phone'";
-        $check = $this->db->select($checkExistingQuery);
-        if ($check) {
-            $alert = "Tài khoản đã tồn tại!";
-            return $alert;
-        } else {
-            $query = "INSERT INTO tbl_users (first_name, last_name,email, password, date, gioitinh, tinh, huyen, xa, phone, diachi, angree) 
-            VALUES ('$first_name', '$last_name', '$email', '$password', '$date', '$gioitinh', '$tinh', '$huyen', '$xa', '$phone', '$diachi', '$angree')";
-
-            $result = $this->db->insert($query);
-            if ($result) {
-                header('Location: index.php');
-                exit();
-            } else {
-                echo "Có lỗi khi đăng ký. Vui lòng thử lại!";
-            }
-
-            return $result;
-        }
-    }
     public function show_product_indexA()
     {
         // $query = "SELECT * FROM tbl_baiviet ORDER BY baiviet_id DESC";
@@ -530,7 +510,7 @@ class index
     //     }
     //     // return $result;
     // 
-    
+
 
 }
 
