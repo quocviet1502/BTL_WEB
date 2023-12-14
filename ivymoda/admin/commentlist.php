@@ -8,14 +8,16 @@ $comment = new comment;
 $show_comment = $comment -> show_comment()
 ?>
        <div class="admin-content-right">
+        <h1>Danh sách bình luận khách hàng</h1>
             <div class="table-content">
                 <table>
                     <tr>
                         <th>Stt</th>
-                        <th>ID</th>
-                        <th>Bài viết ID</th>
+                        <th>Mã Bình Luận</th>
+                        <th>Mã Khách Hàng</th>
+                        <th>Mã Sản Phẩm</th>
                         <th>Nôi dung</th>
-                        <th>Thành viên</th>
+                        <th>Ngày bình luận</th>
                         <th>Tùy chỉnh</th>
                     </tr>
                     <?php
@@ -25,11 +27,12 @@ $show_comment = $comment -> show_comment()
                     ?>
                     <tr>
                         <td> <?php echo $i ?></td>
-                        <td> <?php echo $result['comment_id'] ?></td>
-                        <td> <?php echo $result['baiviet_id']  ?></td>
-                        <td> <?php echo $result['comment_noidung']  ?></td>
-                        <td> <?php echo $result['comment_user']  ?></td>
-                        <td><a href="commentdelete.php?comment_id=<?php echo $result['comment_id'] ?>">Xóa</a></td>
+                        <td> <?php echo $result['MaBinhLuan'] ?></td>
+                        <td> <?php echo $result['MaKhachHang']  ?></td>
+                        <td> <?php echo $result['MaSanPham']  ?></td>
+                        <td> <?php echo $result['NoiDung']  ?></td>
+                        <td> <?php echo $result['NgayBinhLuan']  ?></td>
+                        <td><a href="commentdelete.php?MaBinhLuan=<?php echo $result['MaBinhLuan'] ?>">Xóa</a></td>
                     </tr>
                     <?php
                      }}

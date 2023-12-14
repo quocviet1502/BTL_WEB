@@ -17,6 +17,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['submit'])){
 
 ?>
  <div class="admin-content-right">
+ <h1>Nhập thông tin của sản phẩm cần thêm </h1>
             <div class="product-add-content">
                 <?php
                 if(isset($insert_product)){echo $insert_product; }

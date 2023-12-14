@@ -8,6 +8,7 @@ $cartegory = new cartegoty;
 $show_cartegory = $cartegory -> show_cartegory()
 ?>
        <div class="admin-content-right">
+       <h1>Danh mục</h1>
             <div class="table-content">
                 <table>
                     <tr>

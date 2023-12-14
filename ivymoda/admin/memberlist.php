@@ -9,6 +9,7 @@ $admin = new admin();
 $show_member = $admin -> show_member()
 ?>
        <div class="admin-content-right">
+        <h1>Danh sách khách hàng</h1>
             <div class="table-content">
                 <table>
                     <tr>

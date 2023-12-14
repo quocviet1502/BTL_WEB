@@ -17,7 +17,7 @@ class comment
    }
 
    public function show_comment(){
-    $query = "SELECT * FROM tbl_comment ORDER BY comment_id DESC";
+    $query = "SELECT * FROM binhluan ORDER BY MaBinhLuan DESC";
     $result = $this -> db ->select($query);
     return $result;
 }
@@ -37,7 +37,7 @@ public function show_member(){
     return $result;
 }
 public function delete_comment($comment_id){
-    $query = "DELETE  FROM tbl_comment WHERE comment_id = '$comment_id'";
+    $query = "DELETE  FROM binhluan WHERE MaBinhLuan = '$comment_id'";
     $result = $this -> db ->delete($query);
     return $result;
     // if($result) {$alert = "<span class = 'alert-style'> Delete Thành công</span> "; return $alert;}

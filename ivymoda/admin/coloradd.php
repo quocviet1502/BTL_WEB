@@ -21,6 +21,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST'){
 }
 ?>
         <div class="admin-content-right">
+            <h1>Nhập thông tin màu sắc cần thêm </h1>
             <div class="subcartegory-add-content">
                 <form action="" method="POST" enctype="multipart/form-data">
                     <label for="">Tên màu sắc<span style="color: red;">*</span></label> <br>

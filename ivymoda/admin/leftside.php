@@ -7,7 +7,7 @@ if(isset($_GET['admin_id'])){
 <section class="admin-content row space-between">
         <div class="admin-content-left">
         <div class="header-top-left">
-            <a href="index.php"><p> <span>I</span>vy</p></a>
+            <a href="index.php"><p> <span>Admin</span>BK</p></a>
         </div>
             <ul>
                 <li><a  href="#"> <img style="width:20px" src="icon/hi.png" alt="">Chào:  <span style="color:blueviolet; font-size:22px"><?php echo Session::get('admin_name') ?></span><span style="color: red; font-size:20px">&#10084;</span></a>
@@ -55,9 +55,14 @@ if(isset($_GET['admin_id'])){
                     </ul>
                 </li>
 
-                <li><a href="#"><img style="width:20px" src="icon/size.png" alt="">Quản lí Thành Viên</a>
+                <li><a href="#"><img style="width:20px" src="icon/note.svg" alt="">Quản lí Thành Viên</a>
                     <ul>
                         <li><a href="memberlist.php">Danh sách</a></li>
+                    </ul>
+                </li>
+                <li><a href="#"><img style="width:20px" src="icon/coding.png" alt="">Binh Luận Khách Hàng</a>
+                    <ul>
+                        <li><a href="commentlist.php">Danh sách</a></li>
                     </ul>
                 </li>
                 <li><a href="?admin_id=<?php echo Session::get('admin_id') ?>"> <img style="width:20px" src="icon/logout.png" alt="">Đăng Xuất</a>

@@ -21,6 +21,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST'){
 }
 ?>
         <div class="admin-content-right">
+            <h1>Thêm thông tin về ảnh cần thêm</h1>
             <div class="subcartegory-add-content">
                 <form action="" method="POST" enctype="multipart/form-data">
                     <label for="">Chọn mã sản phẩm<span style="color: red;">*</span></label> <br>

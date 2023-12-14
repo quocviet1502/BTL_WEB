@@ -16,6 +16,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST'){
 }
 ?>
         <div class="admin-content-right">
+            <h1>Nhập thông tin cần thêm</h1>
             <div class="subcartegory-add-content">
                 <form action="" method="POST" enctype="multipart/form-data">
                 <label for="">Chọn danh mục<span style="color: red;">*</span></label> <br>
@@ -30,7 +31,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST'){
                         }}
                         ?>
                     </select><br>
-                    <label for="">Vùi lòng chọn Loại sản phẩm<span style="color: red;">*</span></label> <br>
+                    <label for="">Vui lòng chọn loại sản phẩm<span style="color: red;">*</span></label> <br>
                     <input class="subcartegory-input" type="text" name="loaisanpham_name">
                     <button class="admin-btn" type="submit">Gửi</button>             
                 </form>
