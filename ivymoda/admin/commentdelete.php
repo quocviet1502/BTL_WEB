@@ -7,10 +7,10 @@ include "leftside.php";
  ?>
 <?php
 $comment = new comment();
-if (!isset($_GET['comment_id'])|| $_GET['comment_id']==NULL){
-    echo "<script>window.location = 'cartegorylist.php'</script>";
+if (!isset($_GET['MaBinhLuan'])|| $_GET['MaBinhLuan']==NULL){
+    echo "<script>window.location = 'commentlist.php'</script>";
 	 }
-else {$comment_id = $_GET['comment_id'];
+else {$comment_id = $_GET['MaBinhLuan'];
     }
     $delete_comment = $comment  -> delete_comment($comment_id);
     header('Location:commentlist.php');

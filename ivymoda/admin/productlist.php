@@ -13,6 +13,7 @@ $fm = new Format();
 
 ?>
         <div class="admin-content-right">
+            <h1>Sản phẩm</h1>
             <div class="table-content">
                 <table>
                     <tr>

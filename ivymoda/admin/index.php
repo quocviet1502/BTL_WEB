@@ -4,7 +4,7 @@ include "leftside.php";
 ?>
         <div class="admin-content-right">
            <div class="admin-content-right-bg">
-               <img src="icon/bg.png" alt="">
+               <img src="icon/logoBK.png" alt="">
            </div>
         </div>
     </section>

@@ -3,14 +3,18 @@ include "header.php";
 include "leftside.php";
 // include "class/cartegory_class.php";
 // define('__ROOT__', dirname(dirname(__FILE__))); 
-// require_once(__ROOT__.'../admin/class/comment_class.php');
+// require_once(__ROOT__.'../admin/class/admin_class.php');
  ?>
+
+
 <?php
-$comment = new comment();
-if (isset($_GET['user_id'])|| $_GET['user_id']!=NULL){
- 
-$userA_id = $_GET['user_id'];
+$admin = new admin;
+if (!isset($_GET['id'])|| $_GET['id']==NULL){
+    echo "no";
+	 }
+else {$id = $_GET['id'];
     }
-    $delete_member = $comment  -> delete_member($userA_id);
+    $delete_admin = $admin  -> delete_member($id);
+    
     header('Location:memberlist.php');
 ?>

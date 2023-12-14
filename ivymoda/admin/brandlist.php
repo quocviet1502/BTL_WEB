@@ -8,6 +8,7 @@ $brand = new brand;
 $show_brand = $brand -> show_brand()
 ?>
        <div class="admin-content-right">
+        <h1>Loại sản phẩm</h1>
             <div class="table-content">
                 <table>
                     <tr>

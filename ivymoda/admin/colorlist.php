@@ -8,6 +8,7 @@ $brand = new brand;
 $show_color = $brand -> show_color()
 ?>
        <div class="admin-content-right">
+        <h1>Màu sắc</h1>
             <div class="table-content">
                 <table>
                     <tr>

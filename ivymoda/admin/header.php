@@ -12,6 +12,7 @@ require_once(__ROOT__ . '/admin/class/cartegory_class.php');
 require_once(__ROOT__ . '/admin/class/brand_class.php');
 require_once(__ROOT__ . '/admin/class/comment_class.php');
 require_once(__ROOT__ . '/admin/class/product_class.php');
+require_once(__ROOT__ . '/admin/class/admin_class.php');
 Session::init();
 Session::checkSession()
 ?>

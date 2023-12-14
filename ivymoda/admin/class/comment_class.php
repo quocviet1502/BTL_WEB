@@ -17,7 +17,7 @@ class comment
    }
 
    public function show_comment(){
-    $query = "SELECT * FROM tbl_comment ORDER BY comment_id DESC";
+    $query = "SELECT * FROM binhluan ORDER BY MaBinhLuan DESC";
     $result = $this -> db ->select($query);
     return $result;
 }
@@ -32,12 +32,12 @@ public function show_answer() {
     return $result;
 }
 public function show_member(){
-    $query = "SELECT * FROM tbl_user ORDER BY userA_id DESC";
+    $query = "SELECT * FROM tbl_users ORDER BY id DESC";
     $result = $this -> db ->select($query);
     return $result;
 }
 public function delete_comment($comment_id){
-    $query = "DELETE  FROM tbl_comment WHERE comment_id = '$comment_id'";
+    $query = "DELETE  FROM binhluan WHERE MaBinhLuan = '$comment_id'";
     $result = $this -> db ->delete($query);
     return $result;
     // if($result) {$alert = "<span class = 'alert-style'> Delete Thành công</span> "; return $alert;}
@@ -65,7 +65,7 @@ public function insert_member($user_ten,$user_password,$user_img){
         }
     
         public function delete_member($userA_id){
-            $query = "DELETE  FROM tbl_user WHERE userA_id = '$userA_id'";
+            $query = "DELETE  FROM tbl_users WHERE id = '$userA_id'";
             $result = $this -> db ->delete($query);
             return $result;
             // if($result) {$alert = "<span class = 'alert-style'> Delete Thành công</span> "; return $alert;}
@@ -74,6 +74,8 @@ public function insert_member($user_ten,$user_password,$user_img){
         
         
         }
+        
+        
 
 
        

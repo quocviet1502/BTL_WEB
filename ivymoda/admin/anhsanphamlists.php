@@ -14,6 +14,7 @@ $product = new product();
 ?>
 
        <div class="admin-content-right">
+       <h1>Ảnh sản phẩm</h1>
             <div class="table-content">
                 <table>
                     <tr>
