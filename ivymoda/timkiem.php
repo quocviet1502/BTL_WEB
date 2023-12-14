@@ -2,7 +2,6 @@
 include "header.php";
 include "leftside.php";
 
-
 //Lấy từ khóa tìm kiếm và loại sản phẩm từ URL
 $tukhoa = isset($_GET['tukhoa']) ? $_GET['tukhoa'] : '';
 $sanpham_id = isset($_GET['sanpham_id']) ? $_GET['sanpham_id'] : '';
@@ -10,10 +9,9 @@ $sanpham_id = isset($_GET['sanpham_id']) ? $_GET['sanpham_id'] : '';
 // Tìm kiếm sản phẩm
 $ketqua_tukhoa = $index->search_sanpham($sanpham_id, $tukhoa);
 ?>
+
 <style>
     .container .cartegory-top.row {
-        /* Override container styles here */
-        /* For example, you can set width to auto to remove fixed width */
         display: none;
     }
 </style>

@@ -65,10 +65,7 @@ a {
     height: 100%;
     display: flex;
 }
-.fa-search:before {
-    content: "\f002";
-    margin-top: -20px;
-}
+
 .top-menu-items>ul>li {
     font-family: var(--main-text-font);
     padding: 0 12px;
@@ -504,7 +501,7 @@ a {
 
 /* ----------PRODUCT----------- */
 .product {
-    padding: 100px 0;
+    padding: 80px 0;
     border-bottom: 1px solid #dddddd;
 }
 
@@ -515,7 +512,12 @@ a {
 .product-top p {
     font-family: var(--main-text-font);
     margin: 0 12px;
+    display: inline; /* or use display: inline-block; */
+    margin-right: 5px;
     font-size: 12px;
+}
+.product-top a{
+    color: black;
 }
 
 .product-content-left {
@@ -621,8 +623,9 @@ a {
 }
 
 .quantity input {
+    margin-left: 10px;
     width: 35px;
-    padding-left: 3px;
+    text-align: center;
 }
 
 .product-content-right-product-button button {
@@ -776,6 +779,11 @@ a {
     padding: 100px 0;
 }
 
+.cart-content{
+    display: flex;
+    width: 90%;
+    margin: 0 auto;
+}
 .cart-top-wrap {
     display: flex;
     justify-content: center;
@@ -975,7 +983,7 @@ a {
 
 /* ---------------------------DELIVERY-------------------------- */
 .delivery {
-    padding: 100px 0;
+    padding: 60px 0;
 }
 
 .delivery-top-wrap {
@@ -1018,7 +1026,8 @@ a {
 }
 
 .delivery-content {
-    margin-top: 20px;
+    width: 90%;
+    margin: 20px auto;
 }
 
 .delivery-content-left {
@@ -1094,7 +1103,7 @@ select {
 .delivery-content-left-button p {
     display: inline-block;
     font-family: var(--main-text-font);
-    font-size: 12px;
+    font-size: 16px;
 }
 
 .delivery-content-left-button span {
@@ -1103,6 +1112,7 @@ select {
 
 .delivery-content-left-button {
     justify-content: space-between;
+    align-items: center;
     padding-top: 20px;
 }
 
@@ -1230,6 +1240,7 @@ label {
     display: flex;
     padding: 12px 0;
     border-bottom: 1px dashed #dddddd;
+    justify-content: center;
 }
 
 .payment-content-right-button input {
@@ -1315,8 +1326,11 @@ label {
 
 /* ----------------------------SUCCESS---------------------- */
 .success {
-    padding: 100px 0 50px;
+    width: 70%;
+    padding: 70px 0 50px;
     text-align: center;
+    margin: 0 auto;
+    font-family: var(--main-text-font);
 }
 
 .success-top {
@@ -1333,6 +1347,7 @@ label {
 
 .success-text {
     text-align: center;
+    line-height: 2;
     padding: 20px 0;
     font-family: var(--main-text-font);
     font-size: 14px;
@@ -1365,7 +1380,10 @@ label {
 
 /* ---------------Bổ sung--------------- */
 .detail {
-    padding: 100px 0 50px;
+    font-family: var(--main-text-font);
+    padding: 80px 0 50px;
+    width: 90%;
+    margin: 0 auto;
 }
 
 .detail-top {
@@ -1683,6 +1701,10 @@ label {
     padding: 15px;
     width: 100%;
 }
+.payment-content{
+    width: 90%;
+    margin: 0 auto;
+}
 
 .register-form .register-row-2 {
     margin-top: 10px;
@@ -1772,7 +1794,12 @@ label {
     background-color: #f49494;
     border-color: #200101;
 }
-
+.delivery-content-left-input-top label{
+    margin-top: 20px;
+}
+.delivery-content-left label{
+    margin-top: 20px;
+}
 /* -----------------------Profile--------------- */
 
 .profile {
@@ -1952,4 +1979,378 @@ label {
 .top-menu-icons ul li.dropdown .dropdown-menu a:hover {
     background-color: #f1f1f1;
 }
+@media only screen and (max-width: 968px) {
 
+    .top-logo img {
+        width: 140px;
+    }
+    .top-menu-items {
+        display: block;
+    }
+
+    .top-menu-icons {
+        display: flex;
+        flex-direction: column;
+    }
+    .cart{
+        padding-top: 20px;
+    }
+    .cart-content{
+        flex-direction: column;
+    }
+    .cart-content-right{
+        margin-top: 30px;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+
+    /* For Tablet: */
+    /* .row > * {
+        width: calc(33.33% - 15px); /* Set the width for each item with some spacing */
+    .cartegory-right-content-item{
+        width: calc(33.33% - 15px); 
+    }
+    .top{
+        height:auto;
+        position: relative;
+        margin-bottom: 0px;
+        padding-bottom: 0;
+    }
+    .profile {
+        margin-top: 30px;
+    }
+    .profile .main-profile form {
+        margin-top: 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    .delivery {
+        padding: 30px 0px;
+    }
+    .delivery-content {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+    }
+    .delivery-content .delivery-content-left{
+        margin-top: 15px;
+        width: 80%;
+        flex: 2;
+        order: 2;
+    }
+    .delivery-content .delivery-content-right{
+        width: 80%;
+        border: 1px solid #6C6D70;
+        margin-bottom: 15px;
+        flex: 1;
+        order: 1;
+    }
+    .payment{
+        padding: 0;
+    }
+    .payment-content{
+        display: flex;
+        flex-direction: column;
+    }
+    .payment-content-left{
+        width: 100%;
+        margin-top: 30px;
+        margin-bottom: 30px;
+        order: 2;
+    }
+    .payment-content-right{
+        width: 100%;
+        border: 1px solid #6C6D70;
+        border-radius: 10px;
+        order: 1;
+    }
+    .success-button{
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+    }
+    .detail{
+        padding: 0;
+    }
+    .detail-text{
+        display: flex;
+        flex-direction: column;
+    }
+    .detail-text-left-content{
+        line-height: 2;
+        width: 100%;
+    }
+    .detail-text-right-content{
+        width: 100%;
+        margin-top: 40px;
+        border: 1px solid #6C6D70;
+        margin-bottom: 20px;
+    }
+    .detail-content-right-bottom {
+        width: 100%;
+    }
+    .aspect-ratio-169{
+        margin-top: 30px;
+    }
+    .cartegory {
+        padding:  0;
+    }
+    
+}
+
+@media only screen and (max-width: 480px) {
+
+    /* For Tablet: */
+    /* .row > * {
+        width: calc(33.33% - 15px); /* Set the width for each item with some spacing */
+    .cartegory-right-content-item{
+        width: calc(48% - 15px); 
+    }
+    .menu-bar{
+        display: block;
+        padding-left: 20px;
+    }
+    .menu-bar:focus{
+        background-color: #27ccd8;
+    }
+    .top-menu-item{
+        transition: none ;
+        display: none;
+    }
+    .top-menu-items li:hover {
+        background-color: transparent; /* Disable hover background color */
+        /* Add any other styles you want to disable on hover */
+    }
+    .top-menu-item{
+        margin-left: 60px;
+        width: 120px;
+    }
+    .top-menu-item ul{
+        text-align: center;
+        align-items: center;
+        justify-content: center;
+    }
+    .top-menu-items{
+        display: none;
+        transition: none ;
+    }
+    .top-menu-items ul{
+        display: flex;
+        flex-direction: column;
+        position: fixed;
+        background-color: white;
+        height: auto;
+        left: 10%;
+        top: 2%;
+        border-radius: 10px;
+        padding-bottom: 10px;
+        border: 0.5px #6C6D70 solid;
+        z-index: 2;
+    }
+    .top-menu-items ul li{
+
+        padding: 10px;
+        border-bottom: 1px #6C6D70 solid;
+        margin:0 10px;
+    }
+    .cartegory {
+        padding: 0;
+    }
+    .top {
+        position: relative;
+        background-color: white;
+    }
+    .top-logo img{
+        width: 70px;
+        padding-left: 10px;
+    }
+    .top-menu-items ul li:hover .top-menu-item {
+        display: none;
+    }
+    .top-menu-item.show {
+        display: block; /* Show the nested lists when the 'show' class is present */
+    }
+    .main-profile form{
+        flex-direction: column;
+    }
+    .cartegory-left {
+        display: none;
+    }
+    .cartegory-right {
+        width: 100%;
+    }
+    .row{
+     align-items: center;
+    }
+    .cartegory-right-top-item button{
+        padding: 0 10px;
+    }
+    .cartegory-right-top-item select{
+        padding: 0 10px ;
+    }
+    .cartegory-top {
+        margin-bottom: 10px;
+    }
+    .cartegory-right-content {
+        margin-top: 20px;
+        align-items: center;
+        justify-content: center;
+    }
+    .profile .main-profile form {
+        margin-top: 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    .profile {
+        margin-top: 20px;
+        width: 90%;
+    }
+    .top{
+        padding-bottom: 10px;
+    }
+    .login-form{
+        display: flex;
+        flex-direction: column;
+        margin: 10px;
+    }
+    .login-form .left-login {
+        border-right: none;
+        padding: 0;
+        width: 100%;
+        border-bottom: 1px #6C6D70 solid;
+        margin-bottom: 20px;
+    }
+    .login-form .right-login {
+        margin-top: 10px;
+    }
+    .login-form .form-btn{
+        width: 70%;
+        margin: 10px auto;
+    }
+    .login-form .form-btn input {
+        width: 100%;
+    }
+    .register-form{
+        flex-direction: column;
+        margin-top: 10px;
+    }
+    .register-form .register-form-content {
+        display: flex;
+        flex-direction: column;
+    }
+    .register-form .register-form-content .register-row{
+        margin-top: 5px;
+        flex-direction: column;
+    }
+    .register-form .register-form-content .register-row input{
+        width: 100%;
+    }
+    .register-form .register-row .element-form {
+        width: 100%;
+    }
+    .product-content {
+        display: flex;
+        flex-direction: column;
+    }
+    .product{
+        padding:10px 0;
+    }
+    .product-content-right {
+        width: 100%;
+    }
+    .delivery {
+        padding: 10px 0;
+    }
+    .delivery-content-left-button{
+        gap: 20px;
+    }
+    .aspect-ratio-169{
+        margin-top: 20px;
+    }
+}
+
+
+/* paginagion */
+.pagination {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+
+.pagination-item {
+    display: inline-block;
+    margin: 0 4px;
+}
+
+.pagination-link {
+    text-decoration: none;
+    color: #000;
+    padding: 4px 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.pagination-item.active .pagination-link {
+    background-color: #ccc;
+    font-weight: bold;
+    color: #000;
+}
+
+.pagination-item:not(.active) .pagination-link {
+    border-color: #000;
+}
+
+
+
+    /* Style for   <div class="cartegory-top row"> */
+    .container {
+        max-width: 1200px;
+        /* Adjust the max-width according to your design */
+        margin: 0 auto;
+        /* Center the container */
+        padding: 20px;
+        /* Add some padding inside the container */
+    }
+
+    .cartegory-top {
+        background-color: #f0f0f0;
+        /* Set a background color */
+        padding: 10px;
+        /* Add padding to the cartegory-top */
+        border-radius: 5px;
+        /* Add border-radius for rounded corners */
+    }
+
+    .cartegory-top a {
+        text-decoration: none;
+        /* Remove underlines from links */
+        color: #000000;
+        /* Set the text color */
+    }
+
+    .cartegory-top p {
+        display: inline;
+        /* Make paragraphs display inline */
+        margin: 0;
+        /* Remove default margins */
+    }
+
+    .cartegory-top span {
+        margin: -3px 5px;
+        /* Add some space around the arrow */
+    }
+
+    /* Hover effect on links */
+    .cartegory-top a:hover {
+        text-decoration: underline;
+        /* Add underline on hover */
+        color: #333;
+        /* Darken the text color on hover */
+    }

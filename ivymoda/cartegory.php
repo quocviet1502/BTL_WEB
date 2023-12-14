@@ -15,36 +15,7 @@ $get_loaisanpham = $index->get_loaisanpham($loaisanpham_id);
 ?>
 
 <style>
-    .pagination {
-        list-style: none;
-        padding: 0;
-        margin: 0;
-        display: flex;
-        justify-content: center;
-    }
 
-    .pagination-item {
-        display: inline-block;
-        margin: 0 4px;
-    }
-
-    .pagination-link {
-        text-decoration: none;
-        color: #000;
-        padding: 4px 8px;
-        border: 1px solid #ccc;
-        border-radius: 4px;
-    }
-
-    .pagination-item.active .pagination-link {
-        background-color: #ccc;
-        font-weight: bold;
-        color: #000;
-    }
-
-    .pagination-item:not(.active) .pagination-link {
-        border-color: #000;
-    }
 </style>
 
 <div class="cartegory-right">

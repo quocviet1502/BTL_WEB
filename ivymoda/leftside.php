@@ -4,53 +4,7 @@ if (isset($_GET['loaisanpham_id']) || $_GET['loaisanpham_id'] != NULL) {
 }
 
 ?>
-<style>
-    /* Style for   <div class="cartegory-top row"> */
-    .container {
-        max-width: 1200px;
-        /* Adjust the max-width according to your design */
-        margin: 0 auto;
-        /* Center the container */
-        padding: 20px;
-        /* Add some padding inside the container */
-    }
 
-    .cartegory-top {
-        background-color: #f0f0f0;
-        /* Set a background color */
-        padding: 10px;
-        /* Add padding to the cartegory-top */
-        border-radius: 5px;
-        /* Add border-radius for rounded corners */
-    }
-
-    .cartegory-top a {
-        text-decoration: none;
-        /* Remove underlines from links */
-        color: #000000;
-        /* Set the text color */
-    }
-
-    .cartegory-top p {
-        display: inline;
-        /* Make paragraphs display inline */
-        margin: 0;
-        /* Remove default margins */
-    }
-
-    .cartegory-top span {
-        margin: -3px 5px;
-        /* Add some space around the arrow */
-    }
-
-    /* Hover effect on links */
-    .cartegory-top a:hover {
-        text-decoration: underline;
-        /* Add underline on hover */
-        color: #333;
-        /* Darken the text color on hover */
-    }
-</style>
 <!-- -----------------------CARTEGPRY---------------------------------------------- -->
 <section class="cartegory">
     <div class="container">
