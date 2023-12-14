@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 11, 2023 at 01:56 PM
+-- Generation Time: Dec 14, 2023 at 12:36 PM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -20,12 +20,38 @@ SET time_zone = "+00:00";
 --
 -- Database: `website_ivy`
 --
-<<<<<<< HEAD
+
 CREATE DATABASE IF NOT EXISTS `website_ivy` DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci;
 USE `website_ivy`;
-=======
+-- --------------------------------------------------------
 
->>>>>>> 751a45b7095820f6d9eb5f06f323467b2b1695fd
+--
+-- Table structure for table `binhluan`
+--
+
+CREATE TABLE `binhluan` (
+  `MaBinhLuan` int(11) NOT NULL,
+  `NoiDung` text NOT NULL,
+  `MaKhachHang` int(11) NOT NULL,
+  `MaSanPham` int(11) NOT NULL,
+  `NgayBinhLuan` datetime NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `binhluan`
+--
+
+INSERT INTO `binhluan` (`MaBinhLuan`, `NoiDung`, `MaKhachHang`, `MaSanPham`, `NgayBinhLuan`) VALUES
+(95, 'CHốt deal ạ', 1, 67, '2023-12-14 13:36:41'),
+(106, '10 điểm', 1, 67, '2023-12-14 13:53:25'),
+(156, 'oke ạ', 1, 66, '2023-12-14 15:13:12'),
+(165, 'hàng chất lượng', 1, 107, '2023-12-14 16:50:37'),
+(167, 'Hàng đẹp qua, tôi sẽ mua nó', 1, 79, '2023-12-14 17:20:57'),
+(170, 'đẹp trai quá', 1, 106, '2023-12-14 17:34:36'),
+(172, 'ádasd', 6, 104, '2023-12-14 17:53:13'),
+(173, 'đẹp tôi lấy cái này', 6, 54, '2023-12-14 17:54:09'),
+(176, 'quá xịn xò ,tôi thích', 7, 107, '2023-12-14 18:34:11');
+
 -- --------------------------------------------------------
 
 --
@@ -73,7 +99,12 @@ INSERT INTO `tbl_cart` (`cart_id`, `sanpham_anh`, `session_idA`, `sanpham_id`, `
 (200, 'admin/uploads/fb63fec93c.jfif', 'vdvri6amdiojg2ap35uel2522r', 40, 'ÁO SƠ MI SLIM VẢI BAMBOO FIT MS 17E2977', '199000', 'admin/uploads/0fdd9af517.png', '1', 'L'),
 (201, 'admin/uploads/fb63fec93c.jfif', 'vdvri6amdiojg2ap35uel2522r', 40, 'ÁO SƠ MI SLIM VẢI BAMBOO FIT MS 17E2977', '199000', 'admin/uploads/0fdd9af517.png', '1', 'L'),
 (203, 'admin/uploads/502fdf7cb7.jpg', '3p4o7lmlvdo82p1cdtnhchauji', 46, 'ÁO THUN ANTI-HAVEN', '500000', 'admin/uploads/6e5ee0e33e.png', '1', 'L'),
-(204, 'admin/uploads/502fdf7cb7.jpg', '3p4o7lmlvdo82p1cdtnhchauji', 46, 'ÁO THUN ANTI-HAVEN', '500000', 'admin/uploads/6e5ee0e33e.png', '1', 'L');
+(204, 'admin/uploads/502fdf7cb7.jpg', '3p4o7lmlvdo82p1cdtnhchauji', 46, 'ÁO THUN ANTI-HAVEN', '500000', 'admin/uploads/6e5ee0e33e.png', '1', 'L'),
+(205, 'http://localhost/Git_Web/ivymoda/admin/uploads/681391bc899e6452ea0a203202b1f708.jpg', '4p0fa5sm1b5lkqm4u5tpe372ce', 76, 'QUẦN ỐNG SUÔNG HỌA TIẾT KẺ', '450000', 'admin/uploads/6e5ee0e33e.png', '1', 'L'),
+(206, 'admin/uploads/71e66e558c.jfif', '4p0fa5sm1b5lkqm4u5tpe372ce', 37, 'QUẦN DÀI SLIM KHUY LỆCH MS 22E2953', '990000', 'admin/uploads/587ce24cea.png', '1', 'L'),
+(207, 'admin/uploads/8d382dfd60.jpg', 'sgbcl6bo4irf0kigqh7utcebq7', 106, 'ÁO THUN HỌA TIẾT MẶT CƯỜI', '200000', 'admin/uploads/4725827496.png', '1', 'S'),
+(208, 'admin/uploads/3c4fea2e85.jpg', 'sgbcl6bo4irf0kigqh7utcebq7', 95, 'ĐẦM BABYDOLL BÉ GÁI', '420000', 'admin/uploads/587ce24cea.png', '1', 'S'),
+(210, 'admin/uploads/19d787a044.jpg', 'a6spvdg1qamsmgeok5cu81kfgn', 47, 'ÁO KHOÁC GIÓ DÁNG DÀI', '900000', 'admin/uploads/5cb8e93b6c.png', '1', 'L');
 
 -- --------------------------------------------------------
 
@@ -102,7 +133,11 @@ INSERT INTO `tbl_carta` (`cartA_id`, `sanpham_anh`, `session_idA`, `sanpham_id`,
 (63, 'admin/uploads/11099034d3.jfif', 'h9opmaabcu8tatbokvgpmrb5pq', 35, 'ÁO SƠ MI SLIM FIT TAY NGẮN MS 16E2995', '890000', 'admin/uploads/587ce24cea.png', '2', 'XL'),
 (64, 'admin/uploads/fb63fec93c.jfif', 'h9opmaabcu8tatbokvgpmrb5pq', 40, 'ÁO SƠ MI SLIM VẢI BAMBOO FIT MS 17E2977', '199000', 'admin/uploads/0fdd9af517.png', '2', 'XL'),
 (67, 'http://localhost/BTL_WEB/BTL_WEB-MASTER/ivymoda/admin/uploads/1.jfif', 'fkh5apgaulqjlseb3f1qqout0k', 40, 'ÁO SƠ MI SLIM VẢI BAMBOO FIT MS 17E2977', '199000', 'admin/uploads/0fdd9af517.png', '1', 'XL'),
-(68, 'admin/uploads/2fcb67303e.png', 'u62jghlkfcgm9jd7rh57t350ah', 39, 'QUẦN DÀI REGULAR CẠP 2 KHUY MS 22E2922', '790000', 'admin/uploads/4725827496.png', '1', 'L');
+(68, 'admin/uploads/2fcb67303e.png', 'u62jghlkfcgm9jd7rh57t350ah', 39, 'QUẦN DÀI REGULAR CẠP 2 KHUY MS 22E2922', '790000', 'admin/uploads/4725827496.png', '1', 'L'),
+(69, 'admin/uploads/19d787a044.jpg', 'a6spvdg1qamsmgeok5cu81kfgn', 47, 'ÁO KHOÁC GIÓ DÁNG DÀI', '900000', 'admin/uploads/5cb8e93b6c.png', '1', 'L'),
+(70, 'admin/uploads/d90e0cb24c.jpg', 'm07f2g5iju9s17li8eg2t8h2tn', 67, 'SET BỘ HOODIE KÈM CV KẺ', '350000', 'admin/uploads/6e5ee0e33e.png', '1', 'L'),
+(71, 'admin/uploads/bb8ba1ea71.jpg', 'm07f2g5iju9s17li8eg2t8h2tn', 45, 'ÁO VEST KẺ', '900000', 'admin/uploads/6e5ee0e33e.png', '1', 'L'),
+(72, 'admin/uploads/3d37cb35d9.jpg', 'm07f2g5iju9s17li8eg2t8h2tn', 80, 'ĐẦM LỤA LY NHÚN', '650000', 'admin/uploads/0fdd9af517.png', '1', 'L');
 
 -- --------------------------------------------------------
 
@@ -10854,7 +10889,9 @@ CREATE TABLE `tbl_order` (
 INSERT INTO `tbl_order` (`order_id`, `session_idA`, `loaikhach`, `customer_name`, `customer_phone`, `customer_tinh`, `customer_huyen`, `customer_xa`, `customer_diachi`) VALUES
 (60, 'h9opmaabcu8tatbokvgpmrb5pq', 'khachle', 'Ngô Sỹ Nguyên', '0973999949', '19', '171', '05812', '32 Hàm Nghi'),
 (63, 'fkh5apgaulqjlseb3f1qqout0k', 'khachle', 'Nguyễn Quốc VIệt', '+84334323606', '42', '444', '18496', '123 đường số 1'),
-(64, 'u62jghlkfcgm9jd7rh57t350ah', 'khachle', 'Nguyễn Quốc Việt', '263645754', '#', '#', '#', '123 đường số 1');
+(64, 'u62jghlkfcgm9jd7rh57t350ah', 'khachle', 'Nguyễn Quốc Việt', '263645754', '#', '#', '#', '123 đường số 1'),
+(65, 'a6spvdg1qamsmgeok5cu81kfgn', 'khachle', 'Nguyễn Quốc Việt', '263645754', '#', '#', '#', 'fndnd'),
+(66, 'm07f2g5iju9s17li8eg2t8h2tn', 'khachle', 'Nguyễn Quốc Việt', '0334323606', '42', '444', '18553', 'Ngọc Bội');
 
 -- --------------------------------------------------------
 
@@ -10878,7 +10915,9 @@ CREATE TABLE `tbl_payment` (
 INSERT INTO `tbl_payment` (`payment_id`, `session_idA`, `giaohang`, `thanhtoan`, `order_date`, `statusA`) VALUES
 (42, 'h9opmaabcu8tatbokvgpmrb5pq', 'Giao hàng chuyển phát nhanh', 'Thu tiền tận nơi', '04/10/2021', 0),
 (45, 'fkh5apgaulqjlseb3f1qqout0k', 'Giao hàng chuyển phát nhanh', 'Thu tiền tận nơi', '07/12/2023', 0),
-(46, 'u62jghlkfcgm9jd7rh57t350ah', 'Giao hàng chuyển phát nhanh', 'Thu tiền tận nơi', '08/12/2023', 0);
+(46, 'u62jghlkfcgm9jd7rh57t350ah', 'Giao hàng chuyển phát nhanh', 'Thu tiền tận nơi', '08/12/2023', 0),
+(47, 'a6spvdg1qamsmgeok5cu81kfgn', 'Giao hàng chuyển phát nhanh', 'Thu tiền tận nơi', '14/12/2023', 0),
+(48, 'm07f2g5iju9s17li8eg2t8h2tn', 'Giao hàng chuyển phát nhanh', 'Thu tiền tận nơi', '14/12/2023', 0);
 
 -- --------------------------------------------------------
 
@@ -11388,9 +11427,52 @@ INSERT INTO `tbl_sanpham_size` (`sanpham_size_id`, `sanpham_id`, `sanpham_size`)
 (272, 107, 'S'),
 (273, 107, 'M');
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tbl_users`
+--
+
+CREATE TABLE `tbl_users` (
+  `id` int(11) NOT NULL,
+  `first_name` varchar(128) NOT NULL,
+  `last_name` varchar(128) NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `password` varchar(255) NOT NULL,
+  `date` text NOT NULL,
+  `gioitinh` varchar(128) NOT NULL,
+  `tinh` text NOT NULL,
+  `huyen` text NOT NULL,
+  `xa` text NOT NULL,
+  `phone` varchar(128) NOT NULL,
+  `diachi` text NOT NULL,
+  `angree` varchar(128) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Dumping data for table `tbl_users`
+--
+
+INSERT INTO `tbl_users` (`id`, `first_name`, `last_name`, `email`, `password`, `date`, `gioitinh`, `tinh`, `huyen`, `xa`, `phone`, `diachi`, `angree`) VALUES
+(1, 'nguyen', 'việtkkkkk', 'nguyenthongtdna@gmail.com', '', '2023-11-29', 'nam', '30', '290', '10600', '03479181465', '123', '0'),
+(2, 'nguyen', 'thong', 'thong.nguyen1820031956@hcmut.edu.vn', '', '2023-12-06', 'nam', '26', '#', '#', '03479181465', 'thong', '1'),
+(3, 'nguyen', 'thong', 'hello@gmail.com', '', '2023-12-07', 'nam', '27', '259', '09301', '03479181465', 'thong', '1'),
+(4, 'nguyen', 'thong', 'admin@gmail.com', '$2y$10$2Gmpx2zk6yyVW7grf4Cro.ZRjaeiuPSTmbtIsOBYjjQtoIPv4ZYYy', '2023-12-06', 'nam', '01', '020', '00673', '03479181465', '123, Ngã Ba', '1'),
+(5, 'helo', 'hi', 'hibku@gmail.com', '$2y$10$QAaNqFDxLIzjUP1JIRWGceHlaTHP/Snp9SoTx76.4yCHFh3zahuCy', '2023-12-07', 'nam', '24', '213', '07231', '03479181465', '1234', '1'),
+(6, 'Nguyễn Quốc', 'Thông', 'quocvieta1k19@gmail.com', '$2y$10$SXeKlrA1XsM8j2gkiRgOD.cMk8XuBBjb1ivrX5MXJwx.JzUFKneN2', '2003-02-15', 'nam', '42', '444', '18553', '0334323606', 'Ngọc Bội', '1'),
+(7, 'Trương', 'Tân', 'tan.truongdz843@hcmut.edu.vn', '$2y$10$EVaFa5vDI7CUGXKQti4g3.EOiy8Lz9zuN5ji.wgyp3vS0ykC1jDoC', '2003-05-24', 'nam', '01', '268', '10117', '023523532', 'cầu', '1');
+
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `binhluan`
+--
+ALTER TABLE `binhluan`
+  ADD PRIMARY KEY (`MaBinhLuan`),
+  ADD KEY `MaKhachHang` (`MaKhachHang`),
+  ADD KEY `MaSanPham` (`MaSanPham`);
 
 --
 -- Indexes for table `tbl_admin`
@@ -11459,8 +11541,20 @@ ALTER TABLE `tbl_sanpham_size`
   ADD PRIMARY KEY (`sanpham_size_id`);
 
 --
+-- Indexes for table `tbl_users`
+--
+ALTER TABLE `tbl_users`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
+
+--
+-- AUTO_INCREMENT for table `binhluan`
+--
+ALTER TABLE `binhluan`
+  MODIFY `MaBinhLuan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=178;
 
 --
 -- AUTO_INCREMENT for table `tbl_admin`
@@ -11472,13 +11566,13 @@ ALTER TABLE `tbl_admin`
 -- AUTO_INCREMENT for table `tbl_cart`
 --
 ALTER TABLE `tbl_cart`
-  MODIFY `cart_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=205;
+  MODIFY `cart_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=214;
 
 --
 -- AUTO_INCREMENT for table `tbl_carta`
 --
 ALTER TABLE `tbl_carta`
-  MODIFY `cartA_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=69;
+  MODIFY `cartA_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=73;
 
 --
 -- AUTO_INCREMENT for table `tbl_color`
@@ -11502,13 +11596,13 @@ ALTER TABLE `tbl_loaisanpham`
 -- AUTO_INCREMENT for table `tbl_order`
 --
 ALTER TABLE `tbl_order`
-  MODIFY `order_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=65;
+  MODIFY `order_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=67;
 
 --
 -- AUTO_INCREMENT for table `tbl_payment`
 --
 ALTER TABLE `tbl_payment`
-  MODIFY `payment_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=47;
+  MODIFY `payment_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=49;
 
 --
 -- AUTO_INCREMENT for table `tbl_sanpham`
@@ -11527,6 +11621,12 @@ ALTER TABLE `tbl_sanpham_anh`
 --
 ALTER TABLE `tbl_sanpham_size`
   MODIFY `sanpham_size_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=274;
+
+--
+-- AUTO_INCREMENT for table `tbl_users`
+--
+ALTER TABLE `tbl_users`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

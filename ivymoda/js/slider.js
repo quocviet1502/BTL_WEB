@@ -12,8 +12,7 @@
     })
     function slider (){
         index++;
-        if(index >= imgLeng){index=0;
-       
+        if(index >= imgLeng){index=0;2
         }
         slideRun (index)
     }
@@ -25,3 +24,4 @@
     }
     
     setInterval (slider,5000)
+

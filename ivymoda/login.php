@@ -5,7 +5,9 @@ if (isset($_SESSION["user"])) {
     exit();
 }
 
+
 ?>
+
 <!---LOGIN--->
 <section class="login-form">
     <div class="left-login">

@@ -80,20 +80,20 @@ $get_loaisanpham = $index->get_loaisanpham($loaisanpham_id);
         $startFrom = ($currentPage - 1) * $productsPerPage;
 
 
-        $sort = isset($_GET['sort']) ? $_GET['sort'] : '';
+        // $sort = isset($_GET['sort']) ? $_GET['sort'] : '';
 
-        // Modify your SQL query based on the selected sorting option
-        if ($sort === 'asc') {
-            $orderBy = 'sanpham_gia ASC';
-        } elseif ($sort === 'desc') {
-            $orderBy = 'sanpham_gia DESC';
-        } else {
-            $orderBy = ''; // Default order or no sorting
-        }
+        // // Modify your SQL query based on the selected sorting option
+        // if ($sort === 'asc') {
+        //     $orderBy = 'sanpham_gia ASC';
+        // } elseif ($sort === 'desc') {
+        //     $orderBy = 'sanpham_gia DESC';
+        // } else {
+        //     $orderBy = ''; // Default order or no sorting
+        // }
 
 
-        // Câu truy vấn để lấy sản phẩm theo loaisanpham_id và sắp xếp theo giá
-        $sql = "SELECT * FROM tbl_sanpham WHERE loaisanpham_id = $loaisanpham_id ORDER BY $orderBy LIMIT $startFrom, $productsPerPage";
+        // // Câu truy vấn để lấy sản phẩm theo loaisanpham_id và sắp xếp theo giá
+        // $sql = "SELECT * FROM tbl_sanpham WHERE loaisanpham_id = $loaisanpham_id ORDER BY $orderBy LIMIT $startFrom, $productsPerPage";
 
 
         if ($get_loaisanpham) {
@@ -162,7 +162,7 @@ $get_loaisanpham = $index->get_loaisanpham($loaisanpham_id);
 </div>
 </section>
 
-<script>
+<!-- <script>
     // window.location.href = currentURL + separator + 'sort=' + selectedSort;
 
     // Add JavaScript to handle sorting change event
@@ -184,7 +184,7 @@ $get_loaisanpham = $index->get_loaisanpham($loaisanpham_id);
         // Redirect to the updated URL
         window.location.href = currentURL.href;
     });
-</script>
+</script> -->
 
 
 <!-- -------------------------Footer -->
