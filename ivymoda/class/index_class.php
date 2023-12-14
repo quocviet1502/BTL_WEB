@@ -496,6 +496,13 @@ class index
         $result = $this->db->select($query);
         return $result;
     }
+
+    public function search_sanpham($tukhoa) {
+        $query = "SELECT * FROM tbl_sanpham WHERE sanpham_tieude LIKE '%$tukhoa%'";
+        $result = $this->db->select($query);
+        return $result;
+    }
+
 }
 
 

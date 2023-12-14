@@ -3,6 +3,48 @@ include "header.php";
 $session_idA = session_id();
 ?>
 <?php
+if (!isset($_SESSION["user"])) {
+    header("Location: delivery.php");
+    exit();
+}
+if (isset($_SESSION["user"])) {
+    // Redirect to the login page if not logged in
+    require_once("database/dtb.php");
+
+    // Get user information from the database
+    $userEmail = $_SESSION["user"]["email"];
+    $sql = "SELECT * FROM tbl_users WHERE email = ?";
+    $stmt = mysqli_stmt_init($conn);
+
+    if (mysqli_stmt_prepare($stmt, $sql)) {
+        mysqli_stmt_bind_param($stmt, "s", $userEmail);
+        mysqli_stmt_execute($stmt);
+        $result = mysqli_stmt_get_result($stmt);
+
+        if ($row = mysqli_fetch_assoc($result)) {
+            // Display user information
+            $firstName = $row['first_name'];
+            $lastName = $row['last_name'];
+            $date = $row['date'];
+            $gender = $row['gioitinh'];
+            $province = $row['tinh'];
+            $district = $row['huyen'];
+            $ward = $row['xa'];
+            $phone = $row['phone'];
+            $address = $row['diachi'];
+
+            // ... (you can display other user information as needed)
+        } else {
+            echo "User not found in the database.";
+        }
+    } else {
+        echo "Error in preparing SQL statement.";
+    }
+    mysqli_stmt_close($stmt);
+    mysqli_close($conn);
+}
+
+// Include necessary files and initialize objects
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $session_idA = session_id();
     $loaikhach = $_POST['loaikhach'];
@@ -51,38 +93,21 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 <div class="delivery-content-left">
                     <form action="" method="post">
                         <p>Vui lòng chọn địa chỉ giao hàng</p>
-                        <div class="delivery-content-left-dangnhap row">
-                            <a href="login.php" class="btn-login">
-                                <i class="fas fa-sign-in-alt">
-                                </i>
-                                <p>Đăng nhập (Nếu bạn đã có tài khoản của IVY)</p>
-                            </a>
-                        </div>
-
-                        <div class="delivery-content-left-dangnhap row">
-                            <a href="login.php" class="btn-login">
-                                <i class="fas fa-sign-in-alt">
-                                </i>
-                                <p>Đăng ký</p>
-                            </a>
-                        </div>
-                        <div class="delivery-content-left-dangnhap row">
-                                <i class="fas fa-sign-in-alt">
-                                </i>
-                                <p style = "font-weight: bold;">Khách lẻ</p>
-                        </div>
+                    
+                        <br>
                         <div class="delivery-content-left-input-top row">
                             <div class="delivery-content-left-input-top-item">
                                 <label for="">Họ tên <span style="color: red;">*</span></label>
-                                <input name="customer_name" oninvalid="this.setCustomValidity('Vui lòng không để trống')" oninput="this.setCustomValidity('')" required type="text">
+                                <input name="customer_name" value="<?php echo $firstName . ' ' . $lastName; ?>" oninvalid="this.setCustomValidity('Vui lòng không để trống')" oninput="this.setCustomValidity('')" required type="text">
                             </div>
                             <div class="delivery-content-left-input-top-item">
                                 <label for="">Điện thoại <span style="color: red;">*</span></label>
-                                <input name="customer_phone" oninvalid="this.setCustomValidity('Vui lòng không để trống')" oninput="this.setCustomValidity('')" required type="text">
+                                <input name="customer_phone" value="<?php echo $phone; ?>" oninvalid="this.setCustomValidity('Vui lòng không để trống')" oninput="this.setCustomValidity('')" required type="text">
                             </div>
+
                             <div class="delivery-content-left-input-top-item">
                                 <label for="">Tỉnh/Tp <span style="color: red;">*</span></label>
-                                <select name="customer_tinh" id="tinh_tp" oninvalid="this.setCustomValidity('Vui lòng không để trống')" oninput="this.setCustomValidity('')" required name="" id="">
+                                <select name="customer_tinh" value="<?php echo $province; ?>" id="tinh_tp" oninvalid="this.setCustomValidity('Vui lòng không để trống')" oninput="this.setCustomValidity('')" required name="" id="">
                                     <option value="#">Chọn Tỉnh/Tp</option>
                                     <?php
                                     $show_diachi = $index->show_diachi();
@@ -100,31 +125,25 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                             </div>
                             <div class="delivery-content-left-input-top-item">
                                 <label for="">Quận/Huyện <span style="color: red;">*</span></label>
-                                <select name="customer_huyen" id="quan_huyen" oninvalid="this.setCustomValidity('Vui lòng không để trống')" oninput="this.setCustomValidity('')" required name="" id="">
+                                <select name="customer_huyen" id="quan_huyen" value="<?php echo $huyen; ?>" oninvalid="this.setCustomValidity('Vui lòng không để trống')" oninput="this.setCustomValidity('')" required name="" id="">
                                     <option value="#">Chọn Quận/Huyện</option>
                                 </select>
                             </div>
                         </div>
                         <div class="delivery-content-left-input-bottom">
                             <label for="">Phường/Xã <span style="color: red;">*</span></label>
-                            <select name="customer_xa" id="phuong_xa" oninvalid="this.setCustomValidity('Vui lòng không để trống')" oninput="this.setCustomValidity('')" required name="" id="">
+                            <select name="customer_xa" id="phuong_xa" value="<?php echo $xa; ?>" oninvalid="this.setCustomValidity('Vui lòng không để trống')" oninput="this.setCustomValidity('')" required name="" id="">
                                 <option value="#">Chọn Phường/Xã</option>
                             </select>
                         </div>
                         <div class="delivery-content-left-input-bottom">
                             <label for="">Địa chỉ <span style="color: red;">*</span></label>
-                            <input name="customer_diachi" oninvalid="this.setCustomValidity('Vui lòng không để trống')" oninput="this.setCustomValidity('')" required type="text">
+                            <input name="customer_diachi" value="<?php echo $address; ?>" oninvalid="this.setCustomValidity('Vui lòng không để trống')" oninput="this.setCustomValidity('')" required type="text">
                         </div>
-                        <div class="delivery-content-left-input-top row register">
-                            <div class="delivery-content-left-input-top-item">
-                                <label for="">Mật khẩu<span style="color: red;">*</span></label>
-                                <input type="text">
+                        <div class="delivery-content-left-input-bottom">
+                                <label for="">Email <span style="color: red;">*</span></label>
+                                <input name="Email" value="<?php echo $userEmail; ?>" type="email">
                             </div>
-                            <div class="delivery-content-left-input-top-item">
-                                <label for="">Nhập lại mật khẩu <span style="color: red;">*</span></label>
-                                <input type="text">
-                            </div>
-                        </div>
                         <div class="delivery-content-left-button row">
                             <a href=""><span> &#8810;</span>
                                 <p>Quay lại giỏ hàng</p>
@@ -195,9 +214,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     </div>
 </section>
 <script>
-      function redirectToRegister() {
-    window.location.href = 'register.php';
-  }
     $(document).ready(function() {
         $("#tinh_tp").change(function() {
             // alert($(this).val())
