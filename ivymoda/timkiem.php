@@ -12,6 +12,7 @@ $ketqua_tukhoa = $index->search_sanpham($sanpham_id, $tukhoa);
 
 <div class="cartegory-right">
     <!-- ... Các phần HTML khác trong trang ... -->
+    <h2>Những sản phẩm liên quan đến từ khóa: '<?php echo $tukhoa; ?>'</h2>
     
     <div class="cartegory-right-content row">
         <?php
