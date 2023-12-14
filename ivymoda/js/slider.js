@@ -14,7 +14,7 @@
         index++;
         if(index >= imgLeng){index=0;
        
-        }S
+        }
         slideRun (index)
     }
     function slideRun (index) {

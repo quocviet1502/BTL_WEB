@@ -204,7 +204,8 @@ if (isset($_GET['sanpham_id'])|| $_GET['sanpham_id']!=NULL){
                     }
                 } else {
                     echo "Error in preparing SQL statement.";
-                }}
+                }
+            }
                     // Khi người dùng đăng nhập thành công
             
                 // Lấy tên người dùng từ tbl_users dựa trên user_id
