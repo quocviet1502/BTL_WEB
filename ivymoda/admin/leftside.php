@@ -55,6 +55,11 @@ if(isset($_GET['admin_id'])){
                     </ul>
                 </li>
 
+                <li><a href="#"><img style="width:20px" src="icon/size.png" alt="">Quản lí Thành Viên</a>
+                    <ul>
+                        <li><a href="memberlist.php">Danh sách</a></li>
+                    </ul>
+                </li>
                 <li><a href="?admin_id=<?php echo Session::get('admin_id') ?>"> <img style="width:20px" src="icon/logout.png" alt="">Đăng Xuất</a>
                     
                 </li>
